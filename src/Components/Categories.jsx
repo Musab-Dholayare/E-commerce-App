@@ -9,8 +9,6 @@ export default function Categories() {
     const CategList = ["All", "Electronics", "Clothing", "Home", "Sports"];
 
     const [activeCategory, setActiveCategory] = useState("All");
-
-    // filter products
     const filteredProducts =
         activeCategory === "All"
             ? products
@@ -20,7 +18,6 @@ export default function Categories() {
         <section className="cont-product">
             <div className="grid">
 
-                {/* Categories */}
                 <div className="catg">
                     <h4>Categories</h4>
                     <ul>
@@ -36,7 +33,6 @@ export default function Categories() {
                     </ul>
                 </div>
 
-                {/* Products */}
                 <div className="products">
                     {filteredProducts.map((product) => (
                         <Link to="ProductDetail" style={{textDecoration:"none", color:"black"}}>
