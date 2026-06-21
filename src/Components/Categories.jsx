@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BiCart } from "react-icons/bi";
 import { products } from '../Data/Data';
-import { BsStarHalf, BsStar } from "react-icons/bs";
+import { BsStarHalf, BsStarFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 
 export default function Categories() {
@@ -33,10 +33,11 @@ export default function Categories() {
                     </ul>
                 </div>
 
+
                 <div className="products">
                     {filteredProducts.map((product) => (
-                        <Link to="ProductDetail" style={{textDecoration:"none", color:"black"}}>
-                        <div key={product.id} className="product-card">
+                        <Link key={product.id} to={`/ProductDetail/${product.id}`} style={{textDecoration:"none", color:"black"}}>
+                        <div  className="product-card">
                             <div className="image">
                                 <img src={product.image} alt="image" />
                             </div>
@@ -45,12 +46,12 @@ export default function Categories() {
                                 <h4>{product.title}</h4>
 
                                 <div className="rating">
-                                    <BsStar className='icn' />
-                                    <BsStar className='icn' />
-                                    <BsStar className='icn' />
-                                    <BsStar className='icn' />
-                                    <BsStarHalf style={{ marginRight: "10px" }} />
-                                    {product.rating}
+                                    <BsStarFill className='icn' />
+                                    <BsStarFill className='icn' />
+                                    <BsStarFill className='icn' />
+                                    <BsStarFill className='icn' />
+                                    <BsStarHalf style={{ marginRight: "10px" }} className='icn' />
+                                    <p>{product.rating}</p>
                                 </div>
 
                                 <div className="cart">
